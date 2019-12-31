@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<title>Тестирующая система</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Roboto", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url(/static/images/bg.jpg);
+    min-height: 100%;
+    background-position: center;
+    background-size: 400px;
+    background-repeat: repeat;
+}
+</style>
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity">
+    <div class="w3-display-middle w3-block">
+        <form class="w3-col m6 w3-card w3-display-middle w3-light-grey" method="POST" enctype="multipart/form-data">
+            <header class="w3-container w3-blue">
+                <h1>Отправка решения в тестирующую систему</h1>
+            </header>
+            <div class="w3-row">
+                <div class="w3-container w3-col m6">
+                    <p>Выберите задачу:</p>
+                    <p> 
+                        <input id="t1" class="w3-radio" type="radio" name="task" value="1" checked required>
+                        <label for="t1">1 задача. Мяу (5б)</label>
+                    </p> 
+                    <p> 
+                        <input id="t2" class="w3-radio" type="radio" name="task" value="2" required>
+                        <label for="t2">2 задача. Сиракузская последовательность (10б)</label>
+                    </p>
+                    <p> 
+                        <input id="t3" class="w3-radio" type="radio" name="task" value="3" required>
+                        <label for="t3">3 задача. Частота слов (15б)</label>
+                    </p>
+                    <p> 
+                        <input id="t4" class="w3-radio" type="radio" name="task" value="4" required>
+                        <label for="t4">4 задача. Пирамида (25б)</label>
+                    </p>
+                    <p> 
+                        <input id="t5" class="w3-radio" type="radio" name="task" value="5" required>
+                        <label for="t5">5 задача. Цезарь (45б)</label>
+                    </p>
+
+                    <p> 
+                        <label for="file">Файл решения (.py)</label>
+                        <input id="file" type="file" name="file" accept=".py" required>
+                    </p>
+                </div>
+                {% if data != 0 %}
+                    <div class="w3-container w3-col m6">
+                        <p>Ответ системы:</p>
+                        <div class="w3-code">
+                            <pre>{{ data }}</pre>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+            
+            <footer class="w3-container w3-blue w3-padding">
+                <button class="w3-btn w3-ripple w3-green" type="submit">Отправить решение</button>
+            </footer>
+        </form>
+  </div>
+  <div class="w3-display-bottomleft w3-padding-large">
+    Created by <a href="https://redun.ru" target="_blank">Ivan Redun</a>
+  </div>
+</div>
+
+</body>
+</html>
